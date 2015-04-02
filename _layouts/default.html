@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
+<body>
 
-    {% include header.html %}
+    <main id="sb-site">
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+        <div class="container">
+            <div class="wrapper">
+                {{ content }}
+            </div>
 
-    {% include footer.html %}
+            {% if site.pagination %}
+            {% include pagination.html %}
+            {% endif %}
 
-  </body>
+            {% include next.html %}
+
+        </div>
+
+    </main>
+
+    {% include sidebar.html %}
+
+    {% include js.html %}
+</body>
 
 </html>
